@@ -1,124 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>itsnickcgray</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      margin: 0;
-      min-height: 100vh;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #2b2b2b, #050505 55%);
+      background: #0b0b0b;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
     }
 
-    .card {
+    /* NAVBAR */
+
+    .navbar {
       width: 100%;
-      max-width: 430px;
-      background: rgba(15, 15, 15, 0.88);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 24px;
-      padding: 28px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+      padding: 20px 40px;
+      background: #111;
+      border-bottom: 1px solid #222;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .pfp {
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      background: #222;
-      margin-bottom: 15px;
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
     }
 
-    h1 {
-      margin: 8px 0 4px;
-      font-size: 32px;
-      letter-spacing: -1px;
-    }
-
-    .tag {
-      color: #b8b8b8;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
-
-    .status {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #dcdcdc;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    .bio {
-      color: #dddddd;
-      font-size: 15px;
-      line-height: 1.5;
-      margin-bottom: 22px;
-    }
-
-    .links a {
-      display: block;
-      color: white;
+    .nav-links a {
+      color: #cfcfcf;
       text-decoration: none;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 14px;
-      border-radius: 14px;
-      margin: 10px 0;
+      margin-left: 20px;
       transition: 0.2s;
     }
 
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.18);
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 85vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      margin-bottom: 15px;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      color: #a8a8a8;
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      background: #1c1c1c;
+      border: 1px solid #2d2d2d;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #2b2b2b;
       transform: translateY(-2px);
     }
 
-    .footer {
-      margin-top: 22px;
-      font-size: 12px;
-      color: #888;
+    /* SECTION */
+
+    .section {
+      padding: 80px 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #121212;
+      border: 1px solid #222;
+      border-radius: 18px;
+      padding: 25px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #3a3a3a;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #b0b0b0;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #222;
+      padding: 25px;
+      text-align: center;
+      color: #777;
+      margin-top: 50px;
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
-    <img class="pfp" src="https://via.placeholder.com/150" alt="profile picture">
 
-    <h1>nick gray</h1>
-    <div class="tag">@itsnickcgray</div>
+  <!-- NAVBAR -->
 
-    <div class="status">currently: probably listening to music</div>
+  <div class="navbar">
+    <div class="logo">itsnickcgray</div>
 
-    <p class="bio">
-      music, art, tech, random projects, and whatever else ends up here.
-      this is my external bio page.
-    </p>
-
-    <div class="links">
-      <a href="https://open.spotify.com/user/31q6rpsnu2qx6yanzpqq4ww66qey?si=dc41fab4042048b3" target="_blank">Spotify</a>
-      <a href="https://youtube.com/@npcnick" target="_blank">YouTube</a>
-      <a href="https://discord.com/users/1437574047742427176" target="_blank">Discord</a>
-      <a href="https://github.com/itsnickcgray" target="_blank">GitHub</a>
-    </div>
-
-    <div class="footer">
-      © 2026 nick gray
+    <div class="nav-links">
+      <a href="https://github.com/itsnickcgray">GitHub</a>
+      <a href="https://youtube.com/@npcnick">YouTube</a>
+      <a href="https://open.spotify.com/user/31q6rpsnu2qx6yanzpqq4ww66qey?si=dc41fab4042048b3">Spotify</a>
+      <a href="https://discord.com/users/1437574047742427176">Discord</a>
     </div>
   </div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <h1>nick gray</h1>
+
+    <p>
+      music, tech, art, random projects, and whatever else ends up here.
+      this site is basically my digital corner of the internet.
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="https://youtube.com/@npcnick">YouTube</a>
+      <a class="btn" href="https://open.spotify.com/user/31q6rpsnu2qx6yanzpqq4ww66qey?si=dc41fab4042048b3">Spotify</a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+
+  <section class="section">
+    <h2 class="section-title">about</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>music</h3>
+        <p>
+          mostly alternative, grunge, rap, and random playlists that make sense at 2 am.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>projects</h3>
+        <p>
+          websites, graphics, roleplay communities, and random internet experiments.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>online</h3>
+        <p>
+          usually somewhere on discord, youtube, spotify, or editing something unnecessarily.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 itsnickcgray
+  </footer>
+
 </body>
 </html>
