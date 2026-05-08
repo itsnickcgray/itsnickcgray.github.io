@@ -1,222 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>itsnickcgray</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: white;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
-      width: 100%;
-      padding: 20px 40px;
-      background: #111;
-      border-bottom: 1px solid #222;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .nav-links a {
-      color: #cfcfcf;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 85vh;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-      padding: 40px;
-    }
-
-    .hero h1 {
-      font-size: 70px;
-      margin-bottom: 15px;
-      letter-spacing: -3px;
-    }
-
-    .hero p {
-      color: #a8a8a8;
-      max-width: 700px;
-      line-height: 1.6;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      padding: 14px 26px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: white;
-      background: #1c1c1c;
-      border: 1px solid #2d2d2d;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #2b2b2b;
-      transform: translateY(-2px);
-    }
-
-    /* SECTION */
-
-    .section {
-      padding: 80px 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 34px;
-      margin-bottom: 35px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #121212;
-      border: 1px solid #222;
-      border-radius: 18px;
-      padding: 25px;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #3a3a3a;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #b0b0b0;
-      line-height: 1.5;
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid #222;
-      padding: 25px;
-      text-align: center;
-      color: #777;
-      margin-top: 50px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-
-  <div class="navbar">
-    <div class="logo">itsnickcgray</div>
-
-    <div class="nav-links">
-      <a href="https://github.com/itsnickcgray">GitHub</a>
-      <a href="https://youtube.com/@npcnick">YouTube</a>
-      <a href="https://open.spotify.com/user/31q6rpsnu2qx6yanzpqq4ww66qey?si=dc41fab4042048b3">Spotify</a>
-      <a href="https://discord.com/users/1437574047742427176">Discord</a>
-    </div>
+<nav>
+  <h2>itsnickcgray</h2>
+  <div>
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="dni.html">dni</a>
+    <a href="links.html">links</a>
   </div>
+</nav>
 
-  <!-- HERO -->
-
-  <section class="hero">
-    <h1>nick gray</h1>
-
-    <p>
-      music, tech, art, random projects, and whatever else ends up here.
-      this site is basically my digital corner of the internet.
-    </p>
-
-    <div class="buttons">
-      <a class="btn" href="https://youtube.com/@npcnick">YouTube</a>
-      <a class="btn" href="https://open.spotify.com/user/31q6rpsnu2qx6yanzpqq4ww66qey?si=dc41fab4042048b3">Spotify</a>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-
-  <section class="section">
-    <h2 class="section-title">about</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>music</h3>
-        <p>
-          mostly alternative, grunge, rap, and random playlists that make sense at 2 am.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>projects</h3>
-        <p>
-          websites, graphics, roleplay communities, and random internet experiments.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>online</h3>
-        <p>
-          usually somewhere on discord, youtube, spotify, or editing something unnecessarily.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    © 2026 itsnickcgray
-  </footer>
+<section class="hero">
+  <h1>nick gray</h1>
+  <p>music, art, tech, and random internet stuff.</p>
+  <a class="button" href="about.html">enter site</a>
+</section>
 
 </body>
 </html>
