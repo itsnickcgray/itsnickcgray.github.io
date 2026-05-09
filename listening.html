@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nick is listening to</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .card {
+      background: #171717;
+      padding: 30px;
+      border-radius: 18px;
+      width: 330px;
+      margin: auto;
+    }
+
+    img {
+      width: 180px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .song {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .artist {
+      color: #aaa;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    .status {
+      color: #1db954;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #1db954;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>nick is listening to</h1>
+
+    <img id="album" style="display:none;">
+    <div class="song" id="song">loading...</div>
+    <div class="artist" id="artist"></div>
+    <div class="status" id="status"></div>
+    <p><a id="spotifyLink" target="_blank"></a></p>
+  </div>
+
+  <script>
+    async function updateSong() {
+      const response = await fetch("https://YOUR-VERCEL-APP.vercel.app/api/now-playing");
+      const data = await response.json();
+
+      if (!data.isPlaying) {
+        document.getElementById("song").innerText = "nothing rn";
+        document.getElementById("artist").innerText = "";
+        document.getElementById("status").innerText = "● offline";
+        document.getElementById("album").style.display = "none";
+        document.getElementById("spotifyLink").innerText = "";
+        return;
+      }
+
+      document.getElementById("song").innerText = data.title;
+      document.getElementById("artist").innerText = data.artist;
+      document.getElementById("status").innerText = "● now playing";
+
+      document.getElementById("album").src = data.albumImage;
+      document.getElementById("album").style.display = "inline-block";
+
+      document.getElementById("spotifyLink").href = data.songUrl;
+      document.getElementById("spotifyLink").innerText = "open on spotify";
+    }
+
+    updateSong();
+    setInterval(updateSong, 30000);
+  </script>
+
+</body>
+</html>
